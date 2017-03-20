@@ -219,6 +219,23 @@ export const PLATFORM_CONFIGS: { [key: string]: PlatformConfig } = {
     isMatch(plt: Platform): boolean {
       return isCordova(plt);
     }
+  },
+
+  /**
+   * electron
+   */
+  'electron': {
+    initialize: function(plt: Platform) {
+      plt.prepareReady = function() {
+        // 1) ionic bootstrapped
+        plt.windowLoad(function() {
+          plt.triggerReady('electron');
+        });
+      };
+    },
+    isMatch(plt: Platform): boolean {
+      return isElectron(plt);
+    }
   }
 };
 
