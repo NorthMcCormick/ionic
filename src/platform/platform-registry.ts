@@ -1,7 +1,7 @@
 import { OpaqueToken } from '@angular/core';
 
 import { Platform, PlatformConfig } from './platform';
-import { isCordova, isIos, isIosUIWebView } from './platform-utils';
+import { isCordova, isElectron, isIos, isIosUIWebView } from './platform-utils';
 
 
 export const PLATFORM_CONFIGS: { [key: string]: PlatformConfig } = {
